@@ -23,7 +23,7 @@ In this project, which is a veterinary project, this project has been designed i
 ## Demo Account
 | :closed_lock_with_key: E-Mail | :old_key: Password |
 |----------|----------|
-| **``selen@mail.com``**| **12345**|
+| **``selen@mail.com``**| **1234**|
 
 ## Application Images
 
