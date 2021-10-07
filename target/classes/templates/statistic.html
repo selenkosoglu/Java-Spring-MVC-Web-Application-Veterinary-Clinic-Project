@@ -1,0 +1,150 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="inc/layout">
+
+<head>
+    <title>İstatistik</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+<th:block layout:fragment="content">
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header window-border"
+                     style="background-color: #5e72e4; color: #fff;margin-bottom: 20px"> Klinik İstatistikleri
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-info text-white mb-4">
+                                <div class="card-body" style="padding: 0.7rem 1rem">Bu Hafta En Yoğun
+                                    Gün                </br><h3
+                                            style="font-size: 2rem;margin-bottom: -10px"></h3>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <span class="small text-white stretched-link" th:text="${enyogungun}"></span>
+                                    <span class="small text-white stretched-link" th:text="${randevusayisi}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body" style="padding: 0.7rem 1rem">Bu Hafta En Çok İşlem Yaptıran
+                                    Müşteri</br><h3
+                                            style="font-size: 2rem;margin-bottom: -10px"></h3>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <span class="small text-white stretched-link" th:text="${customername}"></span>
+                                    <span class="small text-white stretched-link" th:text="${count_diary}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body" style="padding: 0.7rem 1rem">Bir Haftalık Ziyaret
+                                    Sayısı            </br><h3
+                                            style="font-size: 2rem;margin-bottom: -10px"></h3>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <span class="small text-white stretched-link"></span>
+                                    <span class="small text-white stretched-link" th:text="${ziyaretsayisi}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header window-border"
+                         style="background-color: #5e72e4; color: #fff;margin-bottom: 30px">Bu Hafta Hangi Müşteri Ne
+                        Kadar Kazandırdı
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="row">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">ADI SOYADI</th>
+                                    <th scope="col">TOPLAM HARCAMA</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <th:block th:if="${customerList != null}">
+                                    <th:block th:if="${customerList.size() > 0}">
+                                        <th:block th:each="item:${customerList}">
+                                            <tr>
+                                                <th th:text="${item[0]}"></th>
+                                                <th th:text="₺+${item[1]}"></th>
+                                            </tr>
+                                        </th:block>
+                                    </th:block>
+                                </th:block>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header window-border"
+                         style="background-color: #5e72e4; color: #fff;margin-bottom: 30px">Ödeme Tipine Göre Kazanç
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="row">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">ÖDEME TİPİ</th>
+                                    <th scope="col">TOPLAM KAZANÇ</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <th:block th:if="${saleTypeList != null}">
+                                    <th:block th:if="${saleTypeList.size() > 0}">
+                                        <th:block th:each="item:${saleTypeList}">
+                                            <tr>
+                                                <th th:text="${item[0]}"></th>
+                                                <th th:text="₺+${item[1]}"></th>
+                                            </tr>
+                                        </th:block>
+                                    </th:block>
+                                </th:block>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</th:block>
+
+
+<th:block layout:fragment="customJs">
+    <script th:src="@{/js/statistics.js}"></script>
+</th:block>
+</body>
+
+</html>

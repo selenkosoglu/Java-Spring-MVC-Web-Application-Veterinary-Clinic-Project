@@ -1,0 +1,150 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="inc/layout">
+
+<head>
+    <title>Satış</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+<th:block layout:fragment="content">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid ">
+            <div class="col-md-3">
+                <button th:value="${isError}" type="button" id="modalButton" class="btn btn-success"
+                        data-bs-toggle="modal"
+                        data-bs-target="#saleModal">KAYITLI MÜŞTERİYE SATIŞ
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main-card mb-3 card mainCart">
+        <div class="card-header cardHeader">Satışlar</div>
+
+        <div class="row mt-3" style="padding-right: 15px; padding-left: 15px;">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
+                    <input id="search" type="text" class="form-control" placeholder="arama..." aria-label="Username"
+                           aria-describedby="addon-wrapping">
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <div class="col-lg-12">
+                <div id="error_message" class="col-lg-12;" style="text-align: center;"><br>
+                    <div class="alert alert-warning">Sisteminize kayıtlı satış bilgisi bulunamadı.</div>
+                </div>
+                <table id="sale_control" class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">TARİH</th>
+                        <th scope="col">FATURA NO</th>
+                        <th scope="col">MÜŞTERİ BİLGİSİ</th>
+                        <th scope="col">ÜRÜN BİLGİSİ</th>
+                        <th scope="col">ÜRÜN ADETİ</th>
+                        <th scope="col">ÖDEME YÖNTEMİ</th>
+                        <th scope="col">TUTAR</th>
+                        <th scope="col">DETAY</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableSale">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="saleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel4">KAYITLI MÜŞTERİYE SATIŞ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/sale/insertSale" method="post" th:object="${saleInterlayer}">
+
+                        <div class="mb-3">
+                            <label class="form-label">Hasta Sahibi</label>
+                            <select name="cid" id="cName" class="selectpicker" data-width="100%"
+                                    data-live-search="true">
+                            </select>
+                            <div class="invalid-feedback" style="display: block" th:if="${ #fields.hasErrors('cid') }"
+                                 th:errors="*{cid}"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ürün Arama</label>
+                            <select class="selectpicker" name="pid" id="pName" data-width="100%"
+                                    data-live-search="true">
+                            </select>
+                            <div class="invalid-feedback" style="display: block" th:if="${ #fields.hasErrors('pid') }"
+                                 th:errors="*{pid}"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pAmount" class="col-form-label">Ürün Miktarı</label>
+                            <input type="input" class="form-control" id="pAmount" name="pAmount"
+                                   placeholder="Ürün Miktarı"
+                                   value="0" size="5" maxlength="5" min="0"
+                            />
+                            <div class="invalid-feedback" style="display: block"
+                                 th:if="${ #fields.hasErrors('pAmount') }" th:errors="*{pAmount}"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ödeme Yöntemi</label>
+                            <select id="pPaymentType" name="pPaymentType" class="selectpicker" data-width="100%"
+                                    data-live-search="true">
+                                <option data-subtext="" value="0">Ödeme Yöntemi Seçiniz</option>
+                                <option data-subtext="" value="1">Nakit</option>
+                                <option data-subtext="" value="2">Kredi Kartı</option>
+                                <option data-subtext="" value="3">Havale</option>
+                            </select>
+                            <div class="invalid-feedback" style="display: block"
+                                 th:if="${ #fields.hasErrors('pPaymentType') }" th:errors="*{pPaymentType}"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pNote" class="col-form-label">Satış Notu</label>
+                            <textarea class="form-control" id="pNote" name="pNote"
+                                      placeholder="Satış Notunuzu Giriniz"></textarea>
+                            <div class="invalid-feedback" style="display: block" th:if="${ #fields.hasErrors('pNote') }"
+                                 th:errors="*{pNote}"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+</th:block>
+
+
+<th:block layout:fragment="customJs">
+    <script th:src="@{/js/sale.js}"></script>
+</th:block>
+
+</body>
+
+
+</html>
