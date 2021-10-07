@@ -8,8 +8,15 @@ In this project, which is a veterinary project, this project has been designed i
 | Java | :arrow_right:  |  90 |
 | Spring MVC | :arrow_right:  |  90 |
 | Spring-Boot Security | :arrow_right:  |  90 |
+| Spring Rest API | :arrow_right:  |  30 |
+| Spring JPA | :arrow_right:  |  70 |
+| Spring Validation | :arrow_right:  |  80 |
+| Regex | :arrow_right:  |  30 |
+| Log4j | :arrow_right:  |  60 |
 | JavaScript | :arrow_right:  |  80 |
 | HTML | :arrow_right:  |  70 |
+| CSS | :arrow_right:  |  70 |
+| Thymeleaf | :arrow_right:  |  70 |
 | Bootstrap5 | :arrow_right:  |  60 |
 | MySQL | :arrow_right:  |  70 |
 
