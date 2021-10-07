@@ -46,7 +46,7 @@ Description
 <a href="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet8.png" target="_blank">
 <img src="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet8.png" width="240" style="max-width:100%;"></a>
   
-<a href="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet8-9.png" target="_blank">
+<a href="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet89.png" target="_blank">
 <img src="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet8-9.png" width="240" style="max-width:100%;"></a>
   
 <a href="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet9.png" target="_blank">
