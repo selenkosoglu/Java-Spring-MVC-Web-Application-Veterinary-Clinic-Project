@@ -1,6 +1,5 @@
 # Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project
-Description
-
+In this project, which is a veterinary project, this project has been designed in order to meet the general needs of veterinary clinics and to carry out the procedures in a fast and practical way. This project was designed using the Spring-Boot framework, following the MVC design pattern. MySql was used as the database during the design phase. JPA, one of the ORM tools, was used to manage the database. While developing the interface, HTML, CSS, BootStrap5 and JavaScript were used. Java and JavaScript languages are used in the back-end part. JQuery is used on the JavaScript side. (Ajax methods in jQuery)
 
 ## Languages and Technologies Used in this Project
 
