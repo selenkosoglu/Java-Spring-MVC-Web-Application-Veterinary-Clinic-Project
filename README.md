@@ -53,7 +53,7 @@ In this project, which is a veterinary project, this project has been designed i
 <img src="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet8.png" width="240" style="max-width:100%;"></a>
   
 <a href="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet89.png" target="_blank">
-<img src="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet8-9.png" width="240" style="max-width:100%;"></a>
+<img src="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet89.png" width="240" style="max-width:100%;"></a>
   
 <a href="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet9.png" target="_blank">
 <img src="https://github.com/selenkosoglu/Java-Spring-MVC-Web-Application-Veterinary-Clinic-Project/blob/main/görseller/vet9.png" width="240" style="max-width:100%;"></a>
